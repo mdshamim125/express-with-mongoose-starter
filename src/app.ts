@@ -4,7 +4,7 @@ import {
   errorHandler,
   notFoundHandler,
 } from './middlewares/globalErrorHandler';
-import routes from './routes';
+import routes from './modules/routes';
 
 const app = express();
 
@@ -13,7 +13,7 @@ const middleware = [
   express.json(),
   express.urlencoded({ extended: true }),
 ];
-// app.use(middleware);
+app.use(middleware);
 
 // Routes
 app.use('/api/v1', routes);
